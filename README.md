@@ -2,6 +2,6 @@
 
 ---
 
-## Theme/bin 直下に展開する。(任意のパス)
+## 初期設定
 
-- 不要なファイルを削除
+`git clone https://github.com/afternoon20/bin`

@@ -26,15 +26,15 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('./css'));
 });
 
-gulp.task('browser-sync', function (done) {
-  browserSync.init({
-    server: {
-      baseDir: './',
-      index: 'index.html',
-    },
-  });
-  done();
-});
+// gulp.task('browser-sync', function (done) {
+//   browserSync.init({
+//     server: {
+//       baseDir: './',
+//       index: 'index.html',
+//     },
+//   });
+//   done();
+// });
 
 // ブラウザのリロード
 gulp.task('bs-reload', function (done) {
@@ -78,12 +78,13 @@ gulp.task('svgmin', function (done) {
 
 gulp.task('watch', function () {
   gulp.watch('./sass/**/*.scss', gulp.task('sass'));
-  gulp.watch('./sass/**/*.scss', gulp.task('bs-reload'));
-  gulp.watch('../*.php', gulp.task('bs-reload'));
-  gulp.watch('./css/*.css', gulp.task('bs-reload'));
-  gulp.watch('./js/*.js', gulp.task('bs-reload'));
+  // gulp.watch('./sass/**/*.scss', gulp.task('bs-reload'));
+  // gulp.watch('../*.php', gulp.task('bs-reload'));
+  // gulp.watch('./css/*.css', gulp.task('bs-reload'));
+  // gulp.watch('./js/*.js', gulp.task('bs-reload'));
   gulp.watch('./img/*', gulp.task('imagemin'));
   gulp.watch('./img/*', gulp.task('svgmin'));
 });
 
-gulp.task('default', gulp.series(gulp.parallel('browser-sync', 'watch')));
+// gulp.task('default', gulp.series(gulp.parallel('browser-sync', 'watch')));
+gulp.task('default', gulp.series(gulp.parallel('watch')));
